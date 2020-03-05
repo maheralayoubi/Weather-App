@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
     let temperatureDescription = document.querySelector('.temprature-description');
     let temperatureDegree = document.querySelector('.degree');
     let locationTimezone = document.querySelector('.location-timezone');
+    let windPace = document.querySelector('.wind-pace');
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -28,12 +29,14 @@ window.addEventListener('load', () => {
                     console.log(data);
                     const {
                         temperature,
-                        summary
+                        summary,
+                        windSpeed
                     } = data.currently;
                     // Set DOM elemnts from the API
                     temperatureDegree.textContent = temperature;
                     temperatureDescription.textContent = summary;
                     locationTimezone.textContent = data.timezone;
+                    windPace.textContent = windSpeed;
                 });
         });
     }
