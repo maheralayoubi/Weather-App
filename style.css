@@ -15,6 +15,12 @@ body {
     color: white;
 }
 
+.weather {
+    width: 30rem;
+    max-height: 30rem;
+    background-color: tomato;
+}
+
 .location,
 .temprature {
     height: 30vh;
