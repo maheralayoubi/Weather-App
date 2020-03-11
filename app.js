@@ -40,17 +40,18 @@ window.addEventListener('load', () => {
                     locationTimezone.textContent = data.timezone;
                     windPace.textContent = windSpeed;
                     // Set Icon
+                    setIcons(icon, document.querySelector(".icon"));
                 });
         });
     }
 
     function setIcons(icon, iconID) {
-        const skycons = new skycons({
+        const skycons = new Skycons({
             color: "white"
         });
         // Replacin - with _ and upper case it to make it same as Skycons code
-        const currentIcon = icon.replace(/-/g, "_").upperCase();
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
         skycons.play();
-        return skycons.set(iconID, skycons[currentIcon]);
+        return skycons.set(iconID, Skycons[currentIcon]);
     }
 });
