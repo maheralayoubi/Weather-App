@@ -49,8 +49,9 @@ window.addEventListener('load', () => {
         const skycons = new Skycons({
             color: "white"
         });
-        // Replacin - with _ and upper case it to make it same as Skycons code
+        // Replacin - with _ and upper case it to make it same as Skycons naming
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        // This will animate the icon
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
     }
