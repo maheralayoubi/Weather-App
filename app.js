@@ -31,6 +31,7 @@ window.addEventListener('load', () => {
                     const {
                         temperature,
                         summary,
+                        icon,
                         windSpeed
                     } = data.currently;
                     // Set DOM elemnts from the API
@@ -38,7 +39,18 @@ window.addEventListener('load', () => {
                     temperatureDescription.textContent = summary;
                     locationTimezone.textContent = data.timezone;
                     windPace.textContent = windSpeed;
+                    // Set Icon
                 });
         });
+    }
+
+    function setIcons(icon, iconID) {
+        const skycons = new skycons({
+            color: "white"
+        });
+        // Replacin - with _ and upper case it to make it same as Skycons code
+        const currentIcon = icon.replace(/-/g, "_").upperCase();
+        skycons.play();
+        return skycons.set(iconID, skycons[currentIcon]);
     }
 });
