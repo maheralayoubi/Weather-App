@@ -9,6 +9,8 @@ window.addEventListener('load', () => {
     let temperatureDegree = document.querySelector('.degree');
     let locationTimezone = document.querySelector('.location-timezone');
     let windPace = document.querySelector('.wind-pace');
+    let temperatureSection = document.querySelector('.temperature');
+    const temperatureSpan = document.querySelector('.temperature span');
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -41,6 +43,15 @@ window.addEventListener('load', () => {
                     windPace.textContent = windSpeed;
                     // Set Icon
                     setIcons(icon, document.querySelector(".icon"));
+
+                    // Change temp to Celsius - Farenhiet
+                    temperatureSection.addEventListener('click', () => {
+                        if (temperatureSpan.textContent === "F") {
+                            temperatureSpan.textContent === "C";
+                        } else {
+                            temperatureSpan.textContent === "F";
+                        }
+                    });
                 });
         });
     }
