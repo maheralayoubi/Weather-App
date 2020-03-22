@@ -41,15 +41,19 @@ window.addEventListener('load', () => {
                     temperatureDescription.textContent = summary;
                     locationTimezone.textContent = data.timezone;
                     windPace.textContent = windSpeed;
+                    // Calculating Celsius
+                    let celsius = (temperature - 32) * (5 / 9);
                     // Set Icon
                     setIcons(icon, document.querySelector(".icon"));
 
                     // Change temp to Celsius - Farenhiet
                     temperatureSection.addEventListener('click', () => {
                         if (temperatureSpan.textContent === "F") {
-                            temperatureSpan.textContent === "C";
+                            temperatureSpan.textContent = "C";
+                            temperatureDegree.textContent = Math.floor(celsius);
                         } else {
-                            temperatureSpan.textContent === "F";
+                            temperatureSpan.textContent = "F";
+                            temperatureDegree.textContent = temperature;
                         }
                     });
                 });
