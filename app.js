@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
             // This API enables cross-origin requests to anywhere.
             const proxy = 'http://cors-anywhere.herokuapp.com/';
             // API form Darksy
-            const api = `${proxy}https://api.darksky.net/forecast/2e5c7457953c48614814c66834bfa7d3/${lat},${long}`;
+            const api = `${proxy}https://api.darksky.net/forecast/6827c7328316b77e8a44df6fb72b0454/${lat},${long}`;
 
             // Get the information from the API
             fetch(api)
